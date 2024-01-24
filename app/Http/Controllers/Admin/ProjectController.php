@@ -50,24 +50,24 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  string  $slug
+     * @param  Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show(Project $project)
     {
-        $project = Project::where('slug',$slug)->first();
+        
         return view('admin.projects.show', compact('project'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Project $project)
     {
-        //
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container mt-5">
-        <h2 class="text-center">Crea un nuovo post</h2>
+        <h2 class="text-center">Crea un nuovo progetto</h2>
 
         @if ($errors->any())
             <div class="alert alert-danger">
