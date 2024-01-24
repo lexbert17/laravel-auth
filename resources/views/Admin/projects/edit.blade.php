@@ -4,7 +4,7 @@
     <div class="container mt-5">
         <h2 class="text-center">Modifica il progetto</h2>
             
-        <form class="mt-5" action="{{ route('admin.projects.update') }}" method="POST">
+        <form class="mt-5" action="{{ route('admin.projects.update', ['project' => $project->slug]) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="mb-3 has-validation">
