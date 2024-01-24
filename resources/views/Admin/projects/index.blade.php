@@ -5,7 +5,7 @@
     <h2>Lista dei post</h2>
 
     <div class="text-end">
-      <a class="btn btn-primary" href="{{ route('admin.project.create') }}">Crea un nuovo post</a>
+      <a class="btn btn-primary" href="{{ route('admin.projects.create') }}">Crea un nuovo post</a>
     </div>
 
     <table class="table table-striped mt-5">
@@ -24,7 +24,7 @@
                     <td>{{ $project->title }}</td>
                     <td>{{ $project->created_at }}</td>
                     <td>
-                      <a class="btn btn-success" href="{{ route('admin.project.show', ['project' => $project->slug]) }}">Dettagli</a>
+                      <a class="btn btn-success" href="{{ route('admin.projects.show', ['project' => $project->slug]) }}">Dettagli</a>
                     </td>
                 </tr>
             @endforeach
