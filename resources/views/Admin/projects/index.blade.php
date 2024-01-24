@@ -8,6 +8,12 @@
       <a class="btn btn-primary" href="{{ route('admin.projects.create') }}">Crea un nuovo post</a>
     </div>
 
+    @if (session('message'))
+      <div class="alert alert-danger">
+        {{session('message')}}
+      </div>
+    @endif
+
     @if (count($projects) > 0)
     <table class="table table-striped mt-5">
       <thead>
@@ -27,6 +33,12 @@
                   <td>
                     <a class="btn btn-success" href="{{ route('admin.projects.show', ['project' => $project->slug]) }}">Dettagli</a>
                     <a class="btn btn-warning" href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}">Modifica</a>
+                    <form class="d-inline-block" action="{{route('admin.projects.destroy', ['project' => $project->slug])}}" method="POST">
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="btn btn-danger">Elimina</button>
+                    </form>
+                   
                   </td>
               </tr>
           @endforeach
