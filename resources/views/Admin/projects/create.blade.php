@@ -13,7 +13,7 @@
                 </ul>
             </div>
         @endif
-
+            
         <form class="mt-5" action="{{ route('admin.projects.store') }}" method="POST">
             @csrf
 
